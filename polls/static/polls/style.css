@@ -1,7 +1,31 @@
+ul { 
+	background: #fff;
+	list-style: none;
+	width: 300px;
+	float: right;
+	padding: 10px;
+}
 li a {
-    color: green;
+    color: #3b5998;
+    text-decoration: none;
+
 }
 
 body {
-    background: white url("images/background.gif") no-repeat right bottom;
+    background: white url("images/brooklyn.jpg") no-repeat right bottom;
+    background-size: cover;
+}
+
+.opacity {
+	  /* Theoretically for IE 8 & 9 (more valid) */
+  /* ...but not required as filter works too */
+  /* should come BEFORE filter */
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; // IE8
+
+  /* This works in IE 8 & 9 too */
+  /* ... but also 5, 6, 7 */
+  filter: alpha(opacity=50); // IE 5-7
+  
+  /* Modern Browsers */
+  opacity: 0.5;
 }
