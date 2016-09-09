@@ -53,10 +53,16 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+# Add static folder to STATIC_DIRS
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["templates"], #[os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +74,8 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGIN_REDIRECT_URL = '/' # It means home view
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
@@ -100,6 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
 
 
 # Internationalization
